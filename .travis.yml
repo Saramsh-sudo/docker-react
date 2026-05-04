@@ -2,11 +2,8 @@ sudo: required
 services:
   - docker
 
-
 before_install:
-  -docker build -t saramsh123/docker-react -f Dockerfile.dev .
+  - docker build -t saramsh123/docker-react -f Dockerfile.dev .
 
 script:
   - docker run -e CI=true saramsh123/docker-react npm test -- --coverage
-
-
